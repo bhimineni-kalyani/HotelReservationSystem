@@ -10,7 +10,7 @@ public class HotelReservationSystemtest1 {
     @Before
     public void init() {
         int lakeWood = 220;
-        int bridgeWood = 2000;
+        int bridgeWood = 200;
         int ridgeWood = 370;
 
         Hotel lakewood = new Hotel("Lakewood", "Guntur", 220);

@@ -1,6 +1,18 @@
 package com.bridgelabz;
 
+import java.util.Date;
+
 public class Hotel {
+    public Integer calculateRate(Date d1, Date d2) {
+        Date currentDate = new Date(d1.getDay(), d1.getMonth(), d1.getYear());
+        int calculatedRate = 0;
+        while(currentDate.isInRange(d1, d2)) {
+            calculatedRate += this.rate;
+            currentDate.addOneDay();
+        }
+        return calculatedRate;
+    }
+
     enum CUSTOMER_TYPE {
         REGULAR_TYPE,
         REWARD_TYPE
