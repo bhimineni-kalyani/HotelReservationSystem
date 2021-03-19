@@ -4,8 +4,13 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class Date implements Comparable<Date> {
-    enum Day {
-        SUN, MON, TUE, WED, THU, FRI, SAT
+    enum Day {  SUN,
+                MON,
+                TUE,
+                WED,
+                THU,
+                FRI,
+                SAT
     }
 
     private static final int LOWER_BOUND_YEAR = 1800;
@@ -21,7 +26,7 @@ public class Date implements Comparable<Date> {
 
     private final int[] months;
 
-    public Date(int day, int month, int year) throws InvalidDateExceptions{
+    public Date(int day, int month, int year) throws InvalidDateExceptions {
         this.day = day;
         this.month = month;
         this.year = year;
