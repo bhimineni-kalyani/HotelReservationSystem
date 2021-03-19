@@ -1,42 +1,44 @@
 package com.bridgelabz;
 
-import java.util.Date;
-
 public class Hotel {
-    private final String name;
-    private final String location;
-    private final int weekdayRate;
-    private final int weekendDayRate;
+    private String name;
+    private String location;
+    private int weekdayRate;
+    private int weekendDayRate;
 
-    public Hotel(String name, String location, int weekdayRate, int weekendDayRate) {
-            this.name = name;
-            this.location = location;
-            this.weekdayRate = weekdayRate;
-            this.weekendDayRate = weekendDayRate;
-        }
+    public void Hotel(String name, String location, int weekdayRate, int weekendDayRate) {
+        this.name = name;
+        this.location = location;
+        this.weekdayRate = weekdayRate;
+        this.weekendDayRate = weekendDayRate;
+    }
 
-        public String getName() {
-            return this.name;
-        }
-        public String getLocation() {
-            return this.location;
-        }
+    public String getName() {
+        return this.name;
+    }
 
-        public int getWeekdayRate() {
-            return this.weekdayRate;
-        }
+    public String getLocation() {
+        return this.location;
+    }
 
-        public int getWeekendDayRate() {
-            return this.weekendDayRate;
-        }
+    public int getWeekdayRate() {
+        return this.weekdayRate;
+    }
 
-        public int calculateRate(Date d1, Date d2) throws InvalidDateExceptions {
-            Date currentDate = new Date(d1.getDay(), d1.getMonth(), d1.getYear());
-            int calculatedRate = 0;
-            while(currentDate.isInRange(d1, d2)) {
+    public int getWeekendDayRate() {
+        return this.weekendDayRate;
+    }
+
+    public int calculateRate(com.bridgelabz.Date d1, com.bridgelabz.Date d2) throws InvalidDateExceptions {
+        com.bridgelabz.Date currentDate = new com.bridgelabz.Date(d1.getDay(), d1.getMonth(), d1.getYear());
+        int calculatedRate = 0;
+        while(currentDate.isInRange(d1, d2)){
+            if(currentDate.calculateDay().equals(com.bridgelabz.Date.Day.SAT) || currentDate.calculateDay().equals(Date.Day.SUN))
+                calculatedRate += this.weekendDayRate;
+            else
                 calculatedRate += this.weekdayRate;
-                currentDate.addOneDay();
-            }
-            return calculatedRate;
+            currentDate.addOneDay();
         }
+        return calculatedRate;
+    }
 }
