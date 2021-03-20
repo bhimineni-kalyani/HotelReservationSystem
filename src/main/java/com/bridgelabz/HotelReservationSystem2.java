@@ -32,7 +32,7 @@ public class HotelReservationSystem2 {
         Map<Hotel, Integer> cheapHotels_andRatesMap = new HashMap<>();
         Integer cheapestRate = Integer.MAX_VALUE;
         for(Hotel hotel : hotelList){
-            Integer total_period_rate = hotel.calculateRate(d1, d2);
+            Integer total_period_rate = hotel.calculateRate(d1,d2);
             if(total_period_rate < cheapestRate) {
                 cheapHotels_andRatesMap.clear();
                 cheapestRate = total_period_rate;

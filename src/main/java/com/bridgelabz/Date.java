@@ -16,9 +16,7 @@ public class Date implements Comparable<Date> {
     private static final int LOWER_BOUND_YEAR = 1800;
     private static final int UPPER_BOUND_YEAR = 9999;
     private static final int TOTAL_MONTHS = 12;
-    private static final int t[] = {0, 3, 2, 5, 0, 3, 5,
-            1, 4, 6, 2, 4};
-
+    private static final int t[] = {0, 3, 2, 5, 0, 3, 5, 1, 4, 6, 2, 4};
 
     private int day;
     private int month;
@@ -184,7 +182,6 @@ public class Date implements Comparable<Date> {
         else {
             System.out.println("Throw Exception");
         }
-
     }
 
     private void increaseOneMonth() {
